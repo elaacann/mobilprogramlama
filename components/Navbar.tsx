@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useAuth } from '@/components/providers/AuthProvider'
-import { LogOut, User, Menu, X, Car, LayoutDashboard, Settings } from 'lucide-react'
+import { LogOut, User, Menu, X, Car, LayoutDashboard, Settings, Heart, Bell } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 
@@ -27,6 +27,8 @@ export default function Navbar() {
     const navLinks = [
         { href: '/dashboard', label: 'Araçlar', icon: Car },
         { href: '/reservations', label: 'Rezervasyonlarım', icon: LayoutDashboard },
+        { href: '/favorites', label: 'Favorilerim', icon: Heart },
+        { href: '/notifications', label: 'Bildirimler', icon: Bell },
         { href: '/profile', label: 'Profilim', icon: User },
     ]
 
@@ -54,8 +56,8 @@ export default function Navbar() {
                                         key={link.href}
                                         href={link.href}
                                         className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${pathname === link.href
-                                                ? 'text-blue-600 bg-blue-50 dark:bg-blue-500/10'
-                                                : 'text-gray-500 hover:text-foreground hover:bg-surface-hover'
+                                            ? 'text-blue-600 bg-blue-50 dark:bg-blue-500/10'
+                                            : 'text-gray-500 hover:text-foreground hover:bg-surface-hover'
                                             }`}
                                     >
                                         {link.label}
@@ -128,8 +130,8 @@ export default function Navbar() {
                                         key={link.href}
                                         href={link.href}
                                         className={`flex items-center gap-3 px-4 py-3 rounded-xl font-medium ${pathname === link.href
-                                                ? 'text-blue-600 bg-blue-50 dark:bg-blue-500/10'
-                                                : 'text-gray-600 dark:text-gray-400 hover:bg-surface-hover'
+                                            ? 'text-blue-600 bg-blue-50 dark:bg-blue-500/10'
+                                            : 'text-gray-600 dark:text-gray-400 hover:bg-surface-hover'
                                             }`}
                                     >
                                         <link.icon className="w-5 h-5" />

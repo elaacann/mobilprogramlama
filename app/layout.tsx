@@ -14,6 +14,9 @@ const geistMono = Geist_Mono({
 
 import { AuthProvider } from "@/components/providers/AuthProvider";
 import Navbar from "@/components/Navbar";
+import AiChat from "@/components/AiChat";
+
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Rent-A-Car",
@@ -33,9 +36,8 @@ export default function RootLayout({
           <main className="flex-grow pt-24 pb-12 px-4 md:px-8 max-w-7xl mx-auto w-full">
             {children}
           </main>
-          <footer className="py-8 text-center text-sm text-gray-500 border-t border-border-subtle bg-surface">
-            <p>© {new Date().getFullYear()} OtoKiralama Premium. Tüm Hakları Saklıdır.</p>
-          </footer>
+          <Footer />
+          <AiChat />
         </AuthProvider>
       </body>
     </html>
